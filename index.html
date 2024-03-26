@@ -1,82 +1,80 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+    <title>Noodl Viewer</title>
 
-    Fore more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
-  <base href="/">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="donApp">
+      .body-scroll {
+        overflow: hidden auto;
+      }
 
-  
+      img {
+        -webkit-user-drag: none;
+      }
 
-  <meta name="robots" content="noindex" />
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+      #root {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: fixed;
+      }
 
-  <!-- Open Graph & SEO tags -->
-  <meta property="og:title" content="donApp" />
-  <meta property="og:description" content="Built with FlutterFlow." />
-  <meta property="og:image" content="https://storage.googleapis.com/flutterflow-prod-hosting/og_splash_gradient.png" /> 
-  <meta name="twitter:title" content="donApp" />
-  <meta name="twitter:description" content="Built with FlutterFlow." />
-  <meta name="twitter:image" content="https://storage.googleapis.com/flutterflow-prod-hosting/og_splash_gradient.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+      .body-scroll > #root {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        overflow: initial;
+        position: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
 
-  <title> donApp </title>
-  <meta name="description" content="Built with FlutterFlow." />
-    
+    <div id="root"></div>
 
-  <!-- Status Bar color in Safari browser (iOS) and PWA -->
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f4f8">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#f1f4f8">
+    <script src="/react.production.min.js"></script>
+    <script src="/react-dom.production.min.js"></script>
 
-  <link rel="manifest" href="manifest.json">
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "41535749";
-  </script>
-  <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-</head>
-<body>
-  
-  
-  
-  
-  
-  <script>
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        entrypointUrl: 'main.dart.js',
-        serviceWorker: {
-          serviceWorkerUrl: 'flutter_service_worker.js?v=',
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: async function(engineInitializer) {
-          // Initialize the Flutter engine
-          let appRunner = await engineInitializer.initializeEngine({});
-          // Run the app
-          await appRunner.runApp();
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="/index-a552789d42b6d2fa.js"></script>
+<script>
+(function () {
+  Noodl.Env['BaseUrl'] = '/';
+})();
+</script>
+
+    <script type="text/javascript" src="/noodl_modules/custom-html-module/index.js"></script>
+
+
+    <script src="/noodl.deploy.js"></script>
+    <script type="application/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const root = document.getElementById("root");
+        window.Noodl._viewerReact.renderDeployed(root, __noodl_modules, window.projectData);
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
